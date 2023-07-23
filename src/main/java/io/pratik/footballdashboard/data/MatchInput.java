@@ -10,6 +10,7 @@ public class MatchInput {
     private String city;
     private String country;
     private String neutral;
+    private String id;
     
     public String getDate() {
         return date;
@@ -65,6 +66,15 @@ public class MatchInput {
     public void setNeutral(String neutral) {
         this.neutral = neutral;
     }
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
+    
 
     
 }
+
+

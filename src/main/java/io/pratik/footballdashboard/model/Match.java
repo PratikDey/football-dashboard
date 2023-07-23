@@ -4,7 +4,12 @@ package io.pratik.footballdashboard.model;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Match {
+    
     private LocalDate date;
     private String homeTeam;
     private String awayTeam;
@@ -14,7 +19,15 @@ public class Match {
     private String city;
     private String country;
     private String neutral;
+    @Id
+    private long id;
     
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
     public LocalDate getDate() {
         return date;
     }
