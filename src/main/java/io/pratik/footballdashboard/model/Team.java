@@ -1,9 +1,8 @@
 package io.pratik.footballdashboard.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Team {
@@ -13,7 +12,19 @@ public class Team {
     private long id;
     private String teamName;
     private long totalMatches;
+
 //    private long totalWins;
+
+    @Transient
+    private List<Match> matchesList;
+
+    public List<Match> getMatchesList() {
+        return matchesList;
+    }
+
+    public void setMatchesList(List<Match> matchesList) {
+        this.matchesList = matchesList;
+    }
 
     public String getTeamName() {
         return teamName;
@@ -58,5 +69,9 @@ public class Team {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public Team() {
+
     }
 }
