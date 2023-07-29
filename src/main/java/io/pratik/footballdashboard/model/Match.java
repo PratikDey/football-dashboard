@@ -21,7 +21,17 @@ public class Match {
     private String neutral;
     @Id
     private long id;
-    
+
+    private String matchWinner;
+
+    public String getMatchWinner() {
+        return matchWinner;
+    }
+
+    public void setMatchWinner(String matchWinner) {
+        this.matchWinner = matchWinner;
+    }
+
     public long getId() {
         return id;
     }

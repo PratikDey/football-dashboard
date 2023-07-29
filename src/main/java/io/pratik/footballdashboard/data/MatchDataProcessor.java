@@ -17,6 +17,17 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
   public Match process(final MatchInput matchInput) throws Exception {
     
     Match match = new Match();
+
+//    String matchWinner;
+//
+//    if(Integer.parseInt(matchInput.getHome_score()) > Integer.parseInt(matchInput.getAway_score())) {
+//      matchWinner = matchInput.getHome_team();
+//    } else if (Integer.parseInt(matchInput.getHome_score()) < Integer.parseInt(matchInput.getAway_score())) {
+//      matchWinner = matchInput.getAway_team();
+//    } else {
+//      matchWinner = "Draw";
+//    }
+
     match.setId(Long.parseLong(matchInput.getId()));
     match.setDate(LocalDate.parse(matchInput.getDate()));
     match.setHomeTeam(matchInput.getHome_team());
@@ -27,7 +38,7 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
     match.setCity(matchInput.getCity());
     match.setCountry(matchInput.getCountry());
     match.setNeutral(matchInput.getNeutral());
-
+//    match.setMatchWinner(matchWinner);
     return match;
   }
 

@@ -11,7 +11,17 @@ public class MatchInput {
     private String country;
     private String neutral;
     private String id;
-    
+
+    private String match_winner;
+
+    public String getMatch_winner() {
+        return match_winner;
+    }
+
+    public void setMatch_winner(String match_winner) {
+        this.match_winner = match_winner;
+    }
+
     public String getDate() {
         return date;
     }
