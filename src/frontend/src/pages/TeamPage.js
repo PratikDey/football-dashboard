@@ -14,9 +14,8 @@ export const TeamPage = () => {
   useEffect(
     () => {
       const fetchTeams = async () => {
-        const response = await fetch(`http://localhost:8080/team/${teamName}`);
+        const response = await fetch(`${process.env.REACT_APP_API_ROOT_URL}/team/${teamName}`);
         const data = await response.json();
-        console.log(data);
         setTeam(data)
       };
       fetchTeams();
@@ -28,7 +27,7 @@ export const TeamPage = () => {
     return <h1>Team not found</h1>
   }
 
-  team.matchesList.map(eachMatch => {
+  team.matchesList.forEach(eachMatch => {
     if(eachMatch.homeScore > eachMatch.awayScore) {
       totalWins += 1;
     } else if(eachMatch.homeScore < eachMatch.awayScore) {
@@ -51,7 +50,7 @@ export const TeamPage = () => {
               data={[
                 { title: 'Losses', value: totalLoss, color: '#a34d5d' },
                 { title: 'Wins', value: totalWins, color: '#4da375' },
-                { title: 'Draws', value: totalDraws, color: '#6A2135'}
+                { title: 'Draws', value: totalDraws, color: '#000000'}
               ]}
             />
         </div>
